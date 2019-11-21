@@ -1,0 +1,21 @@
+	 <div class="container">
+				 <table class="table table-striped">
+					<thead>
+					  <tr>
+						<th scope="col">status</th>
+						<th scope="col">responsebyte</th>
+						<th scope="col">refer</th>
+						<th scope="col">agent</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr *ngFor="let item of hits | paginate: config">
+						<td>{{item.status}}</td>
+						<td>{{item.responsebyte}}</td>
+						<td>{{item.refer}}</td>
+						<td>{{item.agent}}</td>
+					  </tr>
+					</tbody>
+				  </table>
+				  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+		  </div>

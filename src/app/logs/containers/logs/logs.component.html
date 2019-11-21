@@ -1,0 +1,21 @@
+
+
+		 <div class="container">
+				 <table class="table table-striped">
+					<thead>
+					  <tr>
+						<th scope="col">Liste  IP</th>
+						<th scope="col">Hits</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr *ngFor="let item of ipList | paginate: config">
+						<td>{{item.host}}</td>
+						<th scope="row"><a routerLink="{{item.host}}/detail">Hits</a></th>
+					  </tr>
+					</tbody>
+				  </table>
+				  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+		  </div>
+
+<router-outlet></router-outlet>
